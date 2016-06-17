@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" fx:id="layoutPane" fx:controller="notepad.NotepadController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#onFileOpen" text="Open" />
+                <MenuItem mnemonicParsing="false" onAction="#onFileSave" text="Save" />
+                <MenuItem mnemonicParsing="false" onAction="#onFileClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onContextSelectAll" text="Select All" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea layoutY="25.0" prefHeight="376.0" prefWidth="600.0" fx:id="fileContent">
+         <contextMenu>
+            <ContextMenu id="rightClickMenu">
+              <items>
+                  <MenuItem id="paste" mnemonicParsing="false" onAction="#onContextSelectAll" text="Select All" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TextArea>
+   </children>
+</AnchorPane>
